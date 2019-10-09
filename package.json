@@ -25,7 +25,8 @@
     "update:check": "ng update",
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
-    "help": "nx help"
+    "help": "nx help",
+    "doc": "compodoc -p tsconfig.json -s"
   },
   "private": true,
   "dependencies": {
@@ -43,6 +44,7 @@
     "@nestjs/common": "^6.2.4",
     "@nestjs/core": "^6.2.4",
     "@nestjs/platform-express": "^6.2.4",
+    "@nestjs/swagger": "^3.1.0",
     "@ngrx/data": "^8.3.0",
     "@ngrx/effects": "^8.3.0",
     "@ngrx/entity": "^8.3.0",
@@ -53,6 +55,7 @@
     "core-js": "^2.5.4",
     "reflect-metadata": "^0.1.12",
     "rxjs": "~6.4.0",
+    "swagger-ui-express": "^4.1.2",
     "zone.js": "^0.9.1"
   },
   "devDependencies": {
@@ -60,6 +63,7 @@
     "@angular/cli": "8.3.3",
     "@angular/compiler-cli": "^8.2.0",
     "@angular/language-service": "^8.2.0",
+    "@compodoc/compodoc": "^1.1.10",
     "@nestjs/schematics": "^6.3.0",
     "@nestjs/testing": "^6.2.4",
     "@ngrx/store-devtools": "^8.3.0",

@@ -40,3 +40,6 @@ jobs:
       - run:
           command: yarn affected:build --all
           name: Affected Build
+      - run:
+          command: yarn doc
+          name: Generate documentation
