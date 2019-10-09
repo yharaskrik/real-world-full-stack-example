@@ -35,11 +35,11 @@ jobs:
 
       # run tests!
       - run:
-          command: yarn affected:test
+          command: yarn affected:test --all
           name: Affected Test
       - run:
-          command: yarn affected:e2e
+          command: yarn affected:e2e --all
           name: Affected E2E
       - run:
-          command: yarn affected:build
+          command: yarn affected:build --all
           name: Affected Build
