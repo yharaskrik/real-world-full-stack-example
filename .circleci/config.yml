@@ -38,8 +38,5 @@ jobs:
           command: yarn affected:test --all
           name: Affected Test
       - run:
-          command: yarn affected:e2e --all
-          name: Affected E2E
-      - run:
           command: yarn affected:build --all
           name: Affected Build
