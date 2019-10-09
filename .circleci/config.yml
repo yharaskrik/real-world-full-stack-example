@@ -37,6 +37,8 @@ jobs:
       - run:
           command: yarn affected:test --all
           name: Affected Test
+      - store_test_results:
+          path: test-results
       - run:
           command: yarn affected:build --all
           name: Affected Build
