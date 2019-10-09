@@ -21,7 +21,7 @@
             "polyfills": "apps/main/src/polyfills.ts",
             "tsConfig": "apps/main/tsconfig.app.json",
             "aot": false,
-            "assets": ["apps/main/src/favicon.ico", "apps/main/src/assets"],
+            "assets": ["apps/main/src/favicon.ico", "apps/main/src/assets", "apps/main/src/manifest.webmanifest"],
             "styles": ["apps/main/src/styles.scss"],
             "scripts": []
           },
@@ -53,7 +53,9 @@
                   "maximumWarning": "6kb",
                   "maximumError": "10kb"
                 }
-              ]
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "apps/main/ngsw-config.json"
             }
           }
         },
@@ -91,6 +93,43 @@
             "jestConfig": "apps/main/jest.config.js",
             "tsConfig": "apps/main/tsconfig.spec.json",
             "setupFile": "apps/main/src/test-setup.ts"
+          }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/main-server",
+            "main": "apps/main/src/main.server.ts",
+            "tsConfig": "apps/main/tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/main/src/environments/environment.ts",
+                  "with": "apps/main/src/environments/environment.prod.ts"
+                }
+              ],
+              "sourceMap": false,
+              "optimization": {
+                "scripts": false,
+                "styles": true
+              }
+            }
+          }
+        },
+        "app-shell": {
+          "builder": "@angular-devkit/build-angular:app-shell",
+          "options": {
+            "browserTarget": "main:build",
+            "serverTarget": "main:server",
+            "route": "shell"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "main:build:production",
+              "serverTarget": "main:server:production"
+            }
           }
         }
       }
