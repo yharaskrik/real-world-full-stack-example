@@ -1,5 +1,5 @@
 {
-  "npmScope": "real-world-full-stack-example",
+  "npmScope": "real-world",
   "implicitDependencies": {
     "angular.json": "*",
     "package.json": "*",
